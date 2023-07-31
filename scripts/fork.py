@@ -65,5 +65,8 @@ word_pairs = {
     "metiCoin": "metiCoin", 
     "MetiCoin": "MetiCoin",
     "23230": "23230",
+    "23231": "23231",
+    "23232": "23232",
+
     }  # change to your words
 replace_words_in_files(root_dir, word_pairs)

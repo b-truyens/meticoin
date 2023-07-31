@@ -588,7 +588,7 @@ to the expected behavior.
   * `fs::path::native()` and `fs::path::c_str()` can now be `noexcept` as the
     standard mandates
   * On Windows `wchar_t` is now the default for `fs::path::value_type` and
-    `std::wstring` is the default für `fs::path::string_type`.
+    `std::wstring` is the default fr `fs::path::string_type`.
   * This allows the implementation to call Win-API without allocating
     conversions
   * Thread-safety on `const` methods of `fs::path` is no longer an issue

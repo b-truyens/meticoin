@@ -119,7 +119,7 @@ Wallet changes
 When creating a transaction with a fee above `-maxtxfee` (default 0.1 METI),
 the RPC commands `walletcreatefundedpsbt` and  `fundrawtransaction` will now fail
 instead of rounding down the fee. Beware that the `feeRate` argument is specified
-in METI per kilobyte, not litoshi per byte.
+in METI per kilobyte, not metoshi per byte.
 
 Documentation
 -------------

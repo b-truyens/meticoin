@@ -50,18 +50,20 @@ def replace_words_in_files(root_dir, word_pairs):
 # Test the function
 root_dir = "/home/mpi/meticoin"  # change to your directory
 word_pairs = {
-    "litecoin": "meticoin", 
-    "Litecoin": "Meticoin", 
-    "LTC": "METI", 
-    "litecoind": "meticoind", 
-    "lites": "stuivers", 
-    "photons": "duiten", 
-    "Lites": "Stuivers", 
-    "Photons": "Duiten", 
-    "LITECOIN": "METICOIN", 
-    "litoshi": "metoshi", 
-    "Litoshi": "Metoshi", 
-    "liteCoin": "metiCoin", 
-    "LiteCoin": "MetiCoin"
+    "meticoin": "meticoin", 
+    "Meticoin": "Meticoin", 
+    "METI": "METI", 
+    "meticoind": "meticoind", 
+    "Meticoind": "Meticoind", 
+    "stuivers": "stuivers", 
+    "duiten": "duiten", 
+    "Stuivers": "Stuivers", 
+    "Duiten": "Duiten", 
+    "METICOIN": "METICOIN", 
+    "metoshi": "metoshi", 
+    "Metoshi": "Metoshi", 
+    "metiCoin": "metiCoin", 
+    "MetiCoin": "MetiCoin",
+    "23230": "23230",
     }  # change to your words
 replace_words_in_files(root_dir, word_pairs)

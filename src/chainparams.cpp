@@ -205,36 +205,37 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
         consensus.defaultAssumeValid = uint256S("0x4a280c0e150e3b74ebe19618e6394548c8a39d5549fd9941b9c431c73822fbd5"); // 1737876
 
-        pchMessageStart[0] = 0xfd;
-        pchMessageStart[1] = 0xd2;
-        pchMessageStart[2] = 0xc8;
-        pchMessageStart[3] = 0xf1;
-        nDefaultPort = 19335;
-        nPruneAfterHeight = 1000;
-        m_assumed_blockchain_size = 4;
-        m_assumed_chain_state_size = 1;
+        pchMessageStart[0] = 0x6D; // m
+        pchMessageStart[1] = 0x65; // e
+        pchMessageStart[2] = 0x74; // t
+        pchMessageStart[3] = 0x69; // i
 
-        genesis = CreateGenesisBlock(1486949366, 293345, 0x1e0ffff0, 1, 50 * COIN);
+        nDefaultPort = 23231;
+        nPruneAfterHeight = 100000;
+        m_assumed_blockchain_size = 40;
+        m_assumed_chain_state_size = 2;
+
+        genesis = CreateGenesisBlock(1690838942, 2084524493, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S(""));
+        assert(genesis.hashMerkleRoot == uint256S("3b6745f491e80564bd36f3c3dbe4a81bae86c497e776dbbb04e081a099963490"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testnet-seed.meticointools.com");
-        vSeeds.emplace_back("seed-b.meticoin.loshan.co.uk");
-        vSeeds.emplace_back("dnsseed-testnet.thrasher.io");
+        // vSeeds.emplace_back("testnet-seed.meticointools.com");
+        // vSeeds.emplace_back("seed-b.meticoin.loshan.co.uk");
+        // vSeeds.emplace_back("dnsseed-testnet.thrasher.io");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,58);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
-        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,50);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,56);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,178);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x08, 0x53, 0x49, 0xe3};
+        base58Prefixes[EXT_SECRET_KEY] = {0x81, 0x8f, 0x59, 0x15};
 
-        bech32_hrp = "tltc";
-        mweb_hrp = "tmweb";
+        bech32_hrp = "meti";
+        mweb_hrp = "mmeti";
 
         vFixedSeeds = std::vector<uint8_t>(std::begin(chainparams_seed_test), std::end(chainparams_seed_test));
 
@@ -245,17 +246,15 @@ public:
 
         checkpointData = {
             {
-                {300, uint256S("54e6075affe658d6574e04c9245a7920ad94dc5af8f5b37fd9a094e317769740")},
-                {2056, uint256S("17748a31ba97afdc9a4f86837a39d287e3e7c7290a08a1d816c5969c78a83289")},
-                {2352616, uint256S("7540437e7bf7831fa872ba8cfae85951a1e5dbb04c201b6f5def934d9299f3c2")}
+                {0, uint256S("")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data from RPC: getchaintxstats 4096 36d8ad003bac090cf7bf4e24fbe1d319554c8933b9314188d6096ac12648764d
-            /* nTime    */ 1607986972,
-            /* nTxCount */ 4229067,
-            /* dTxRate  */ 0.06527021772939347,
+            // Data from rpc: getchaintxstats 4096 62e2e3d21343a00994d38a63524867507dbeee6850e8fbf02e9c47a3ccf82f24
+            /* nTime    */ 1690838942,
+            /* nTxCount */ 0,
+            /* dTxRate  */ 0
         };
     }
 };
@@ -302,21 +301,20 @@ public:
         consensus.nMinimumChainWork = uint256{};
         consensus.defaultAssumeValid = uint256{};
 
-        pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xbf;
-        pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0xda;
-        nDefaultPort = 19444;
-        nPruneAfterHeight = 1000;
-        m_assumed_blockchain_size = 0;
-        m_assumed_chain_state_size = 0;
+        pchMessageStart[0] = 0x6D; // m
+        pchMessageStart[1] = 0x65; // e
+        pchMessageStart[2] = 0x74; // t
+        pchMessageStart[3] = 0x69; // i
 
-        UpdateActivationParametersFromArgs(args);
+        nDefaultPort = 23232;
+        nPruneAfterHeight = 100000;
+        m_assumed_blockchain_size = 40;
+        m_assumed_chain_state_size = 2;
 
-        genesis = CreateGenesisBlock(1296688602, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1690838942, 2084524493, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x530827f38f93b43ed12af0b3ad25a288dc02ed74d6d7857862df51fc56c416f9"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S(""));
+        assert(genesis.hashMerkleRoot == uint256S("3b6745f491e80564bd36f3c3dbe4a81bae86c497e776dbbb04e081a099963490"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
